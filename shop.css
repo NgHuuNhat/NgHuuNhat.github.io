@@ -56,9 +56,11 @@ ul.nav > li > a{
     background-color: #ffffff;
     display: block;
     color: #1c1e21;
-    padding: 10px;
+    padding: 10px 2px;
     height: 100%;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 ul.nav > li:hover{
@@ -201,9 +203,7 @@ ul.f2 > li:hover{
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
-    *{
-        pointer-events:none;
-    }
+    
 
     body{
         background-color: lightcoral;
@@ -238,6 +238,17 @@ ul.f2 > li:hover{
         font: 14px/18px Arial,Helvetica,sans-serif;
     }
 
+    ul.nav{
+        max-width: 98%;
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0px,1fr));
+        grid-template-rows: repeat(2,minmax(0px,1fr));
+    }
+
+    ul.nav > li > a{
+        display: flex;
+    }
+
     section > div.a{
         grid-template-columns: repeat(3,minmax(0px,1fr));
         grid-template-rows: repeat(2,minmax(0px,320px));
@@ -260,6 +271,21 @@ ul.f2 > li:hover{
     div.d{
         height: 82%;
     }
+}
 
+/* MEDIA QUERIES */
+@media screen and (max-width: 320px) {
+    body{
+        background-color: lightsalmon;
+        font: 14px/18px Arial,Helvetica,sans-serif;
+    }
 
+    section > div.a{
+        grid-template-columns: repeat(2,minmax(0px,1fr));
+        grid-template-rows: repeat(3,minmax(0px,210px));
+    }
+
+    div.d{
+        height: 80%;
+    }
 }
